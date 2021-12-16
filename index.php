@@ -24,3 +24,23 @@
 
         return $multipliersNumbers;
     }
+  /**
+     * Task 1, Question 2
+     * Write a function that tests if a string is a palindrome
+     */
+    echo "\n\nTASK 1 Question 2 - Check string palindrome\n-------------------------------------------\n";
+    $string = readline("Enter a string: ");
+
+    echo "The string is ".checkPalindrome($string)."\n";
+
+    function checkPalindrome($string)
+    {
+        $response = "NOT A PALINDROME";
+
+        $cleanString = strtoupper(preg_replace("/\s+/", "", $string));
+        if ($cleanString === strrev($cleanString)) {
+            $response = "A PALINDROME";
+        }
+
+        return $response;
+    }
